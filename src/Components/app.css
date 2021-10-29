@@ -1,0 +1,57 @@
+.grid-container {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  cursor: pointer;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+}
+.individual-cards {
+  width: 80%;
+  margin: auto;
+}
+.card {
+  border: 0.1px solid rgb(206, 205, 205);
+  padding: 0.7rem;
+  border-radius: 0.5rem;
+  line-height: 2rem;
+  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 2px 1px 3px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 2px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.card > p:nth-child(1) {
+  text-align: center;
+  font-weight: bold;
+}
+.card span {
+  color: rgb(119, 116, 116);
+}
+.dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.dropdown:hover {
+  background-color: rgb(247, 242, 242);
+}
+.count {
+  margin-right: 0.5rem;
+  color: black !important;
+  /* border: 1px solid black; */
+  border-radius: 360%;
+  padding: 0.2rem;
+}
+.laurates-data {
+  margin: 1rem 0rem;
+}
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  margin: 1rem auto;
+}
+label {
+  margin-right: 0.5rem;
+}

@@ -1,0 +1,31 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 40%;
+  margin: 2rem auto;
+  cursor: pointer;
+}
+.title p {
+  font-weight: 700;
+  color: rgb(107, 102, 102);
+  text-align: center;
+}
+.titleBorder {
+  border-bottom: 2px solid black;
+  color: black !important;
+}
+
+@media screen and (max-width: 720px) {
+  .title {
+    width: 95%;
+    justify-content: space-between;
+ 
+  }
+}
