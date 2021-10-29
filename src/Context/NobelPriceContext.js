@@ -1,11 +1,11 @@
 import { createContext, useContext, useReducer } from "react";
+import { getMultipleNobelPriceData } from "../utils/NobelUtils";
 
 const nobelContext = createContext();
 
 const initialState = {
   loading: true,
   nobelData: [],
-  filterByCategoryNames: [],
   multipleNobelPrice: [],
 };
 
@@ -15,6 +15,7 @@ const nobelReducer = (state, { type, payload }) => {
       return {
         ...state,
         nobelData: payload,
+        multipleNobelPrice: getMultipleNobelPriceData(payload),
         loading: false,
       };
     case "FILTER_BY_YEAR":

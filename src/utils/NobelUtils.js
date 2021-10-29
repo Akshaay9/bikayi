@@ -24,7 +24,7 @@ export const getCategories = (data) => {
 
 export const filterData = (filterCategory1, filterCategory2, data) => {
   let result = JSON.parse(JSON.stringify(data));
-  console.log(filterCategory1);
+
   if (filterCategory1 === "default" && filterCategory2 === "default") {
     return result;
   }
@@ -46,4 +46,27 @@ export const filterData = (filterCategory1, filterCategory2, data) => {
   }
 
   return result;
+};
+
+export const getMultipleNobelPriceData = (data) => {
+  let lookUp = {};
+  let finalResult = [];
+
+  data.forEach((ele) => {
+    if (ele?.laureates?.length > 0) {
+      ele.laureates.forEach((e) => {
+        if (e.surname !== undefined) {
+          let fullName = e.firstname + e.surname;
+          if (lookUp[fullName] === undefined) {
+            lookUp[fullName] = fullName;
+          } else {
+            finalResult.push(e);
+          }
+        }
+      });
+    }
+  });
+  console.log(finalResult);
+
+  return finalResult;
 };

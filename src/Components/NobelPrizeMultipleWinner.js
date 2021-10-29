@@ -1,7 +1,18 @@
 import React from "react";
+import { useNobelContext } from "../Context/NobelPriceContext";
+import NobelPriceWinnerlaureates from "./NobelPriceWinnerlaureates";
 
 function NobelPrizeMultipleWinner() {
-  return <div>NobelPrizeMultipleWinner</div>;
+  const {
+    state: { multipleNobelPrice },
+  } = useNobelContext();
+  return (
+    <div>
+      <div className="card individual-cards">
+        <NobelPriceWinnerlaureates data={multipleNobelPrice} />
+      </div>
+    </div>
+  );
 }
 
 export default NobelPrizeMultipleWinner;
