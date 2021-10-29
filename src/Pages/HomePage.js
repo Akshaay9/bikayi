@@ -11,7 +11,7 @@ function HomePage() {
   useEffect(() => {
     (async () => {
       let nobelData = await FetchData(
-        `http://api.nobelprize.org/v1/prize.json`
+        `https://considerablesimplecomputer.akshaynair5.repl.co/`
       );
       nobelDispatch({ type: "GET_NOBEL_DATA", payload: nobelData });
     })();

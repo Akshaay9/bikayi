@@ -7,9 +7,9 @@ jest.mock("axios");
 describe("fetchusers", () => {
   test("should return nobel prize list", async () => {
     axios.get.mockResolvedValueOnce(NobelPriceData);
-    const results = await axios.get(`http://api.nobelprize.org/v1/prize.json`);
+    const results = await axios.get(`https://considerablesimplecomputer.akshaynair5.repl.co/`);
     expect(axios.get).toHaveBeenCalledWith(
-      `http://api.nobelprize.org/v1/prize.json`
+      `https://considerablesimplecomputer.akshaynair5.repl.co/`
     );
     expect(results).toEqual(NobelPriceData);
   });
