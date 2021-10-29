@@ -5,8 +5,6 @@ const nobelContext = createContext();
 const initialState = {
   loading: true,
   nobelData: [],
-  filterByYear: [],
-  filterByCategory: [],
   filterByCategoryNames: [],
   multipleNobelPrice: [],
 };

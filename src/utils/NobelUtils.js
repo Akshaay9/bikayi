@@ -3,7 +3,7 @@ import axios from "axios";
 export const FetchData = async (url) => {
   try {
     const data = await axios.get(url);
-    return data;
+    return data.data.prizes;
   } catch (error) {
     console.log(error);
   }

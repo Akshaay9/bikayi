@@ -15,8 +15,17 @@
 .title p {
   font-weight: 700;
   color: rgb(107, 102, 102);
+  text-align: center;
 }
 .titleBorder {
   border-bottom: 2px solid black;
   color: black !important;
+}
+
+@media screen and (max-width: 720px) {
+  .title {
+    width: 95%;
+    justify-content: space-between;
+ 
+  }
 }
