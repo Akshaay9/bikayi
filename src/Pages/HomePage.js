@@ -3,10 +3,14 @@ import { FetchData } from "../utils/NobelUtils";
 import { useNobelContext } from "../Context/NobelPriceContext";
 import NobelPriceWinnersAll from "../Components/NobelPriceWinnersAll";
 import NobelPrizeMultipleWinner from "../Components/NobelPrizeMultipleWinner";
+import Loader from "../loader/Loader";
 
 function HomePage() {
   const [showNobelPrice, setShowNobelPrice] = useState("all");
-  const { nobelDispatch } = useNobelContext();
+  const {
+    state: { loading },
+    nobelDispatch,
+  } = useNobelContext();
 
   useEffect(() => {
     (async () => {
@@ -33,8 +37,10 @@ function HomePage() {
           Multiple Nobel Price Winners
         </p>
       </div>
+
       {showNobelPrice === "all" && <NobelPriceWinnersAll />}
       {showNobelPrice === "multipleWInner" && <NobelPrizeMultipleWinner />}
+      {loading && <Loader />}
     </div>
   );
 }
