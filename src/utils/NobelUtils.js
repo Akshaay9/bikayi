@@ -25,7 +25,6 @@ export const getCategories = (data) => {
 
 export const filterData = (filterCategory1, filterCategory2, data) => {
   let result = JSON.parse(JSON.stringify(data));
-
   if (filterCategory1 === "default" && filterCategory2 === "default") {
     return result;
   }
@@ -67,7 +66,6 @@ export const getMultipleNobelPriceData = (data) => {
       });
     }
   });
-  console.log(finalResult);
 
   return finalResult;
 };

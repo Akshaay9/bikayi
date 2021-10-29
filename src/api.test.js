@@ -1,6 +1,6 @@
 import axios from "axios";
 import NobelPriceData from "./TestData/NobelPrice.json";
-import { FetchData } from "./utils/NobelUtils";
+
 
 jest.mock("axios");
 
@@ -14,3 +14,5 @@ describe("fetchusers", () => {
     expect(results).toEqual(NobelPriceData);
   });
 });
+
+
