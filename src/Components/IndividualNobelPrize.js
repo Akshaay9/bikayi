@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+import NobelPriceWinnerlaureates from "./NobelPriceWinnerlaureates";
 
 function IndividualNobelPrize({ data }) {
+  const [showLaurates, setShowLaurates] = useState(false);
   return (
     <div className="card">
       <p>{data.year}</p>
@@ -11,10 +13,20 @@ function IndividualNobelPrize({ data }) {
         <span>laureates</span> : {data?.laureates?.length || 0}
       </p>
       {data?.laureates?.length > 0 && (
-        <div className="dropdown">
+        <div
+          className="dropdown"
+          onClick={() => setShowLaurates((ele) => !ele)}
+        >
           <p>Show Laurates</p>
-          <i class="fas fa-caret-down"></i>
+          {!showLaurates ? (
+            <i class="fas fa-caret-down"></i>
+          ) : (
+            <i class="fas fa-sort-up"></i>
+          )}
         </div>
+      )}
+      {data?.laureates?.length > 0 && showLaurates && (
+        <NobelPriceWinnerlaureates data={data?.laureates} />
       )}
     </div>
   );
