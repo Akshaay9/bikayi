@@ -15,7 +15,7 @@ const nobelReducer = (state, { type, payload }) => {
       return {
         ...state,
         nobelData: payload,
-        multipleNobelPrice: getMultipleNobelPriceData(payload),
+        multipleNobelPrice: getMultipleNobelPriceData(payload || []),
         loading: false,
       };
     case "FILTER_BY_YEAR":

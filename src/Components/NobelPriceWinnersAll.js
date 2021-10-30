@@ -6,9 +6,10 @@ import { filterData, getYears } from "../utils/NobelUtils";
 import Category from "./Category";
 function NobelPriceWinnersAll() {
   const {
-    state: { loading, nobelData },
-    nobelDispatch,
+    state: { nobelData },
   } = useNobelContext();
+
+  
 
   const [filterByYear, setFilterByYear] = useState("default");
   const [filterByCategory, setFilterByCategory] = useState("default");

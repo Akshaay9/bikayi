@@ -3,8 +3,8 @@ import axios from "axios";
 export const FetchData = async (url) => {
   try {
     const data = await axios.get(url);
-console.log(data);
-    return data.data;
+
+    return data.data || [];
   } catch (error) {
     console.log(error);
   }
@@ -49,6 +49,7 @@ export const filterData = (filterCategory1, filterCategory2, data) => {
 };
 
 export const getMultipleNobelPriceData = (data) => {
+  if (data.length === 0) return [];
   let lookUp = {};
   let finalResult = [];
 

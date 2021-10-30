@@ -17,7 +17,8 @@ function HomePage() {
       let nobelData = await FetchData(
         `https://considerablesimplecomputer.akshaynair5.repl.co/`
       );
-      nobelDispatch({ type: "GET_NOBEL_DATA", payload: nobelData });
+
+      nobelDispatch({ type: "GET_NOBEL_DATA", payload: nobelData || [] });
     })();
   }, []);
 
