@@ -21,9 +21,10 @@ function NobelPriceWinnersAll() {
         setFilterByCategory={setFilterByCategory}
       />
       <div className="grid-container">
-        {filterData(filterByYear, filterByCategory, nobelData).map((ele) => (
-          <IndividualNobelPrize data={ele} />
-        ))}
+        {nobelData?.length > 0 &&
+          filterData(filterByYear, filterByCategory, nobelData).map((ele) => (
+            <IndividualNobelPrize data={ele} />
+          ))}
       </div>
     </div>
   );
