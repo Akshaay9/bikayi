@@ -4,6 +4,8 @@ export const FetchData = async (url) => {
   try {
     const data = await axios.get(url);
 
+    console.log("got data");
+
     return data.data || [];
   } catch (error) {
     console.log(error);
